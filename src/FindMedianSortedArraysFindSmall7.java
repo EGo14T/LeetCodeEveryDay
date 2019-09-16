@@ -40,9 +40,16 @@ public class FindMedianSortedArraysFindSmall7 {
 
     @Test
     public void test(){
-        int[] nums1 = new int[]{1,2};
-        int[] nums2 = new int[]{3,4};
-        double a = findMedianSortArrays(nums1,nums2);
-        System.out.println(a);
+        //int[] nums1 = new int[]{1,2};
+        //int[] nums2 = new int[]{3,4};
+        //double a = findMedianSortArrays(nums1,nums2);
+        //System.out.println(a);
+        String s = "abacdca";  //s.len = 7
+        int len = s.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (s.charAt(i) != s.charAt(len - i - 1)) {
+                System.out.println("no");;
+            }
+        }
     }
 }
