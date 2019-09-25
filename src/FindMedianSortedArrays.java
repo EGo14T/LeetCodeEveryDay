@@ -41,6 +41,8 @@ public class FindMedianSortedArrays {
         int i = 0, j = 0;
         while (count != (m + n)) {
             if (i == m) {
+                //--------------------------------------------------------
+                //当有一个数组遍历完之后，另一个数组直接灌入新的数组 跳过判断
                 while (j != n) {
                     nums[count++] = nums2[j++];
                 }
@@ -51,15 +53,17 @@ public class FindMedianSortedArrays {
                     nums[count++] = nums1[i++];
                 }
                 break;
+                //---------------------------------------------------------
             }
-
+            //-------------------------------------------------------------
+            //比大小，小的数填入新的数组，下标右移
             if (nums1[i] < nums2[j]) {
                 nums[count++] = nums1[i++];
             } else {
                 nums[count++] = nums2[j++];
             }
         }
-
+            //--------------------------------------------------------------
         if (count % 2 == 0) {
             return (nums[count / 2 - 1] + nums[count / 2]) / 2.0;
         } else {
