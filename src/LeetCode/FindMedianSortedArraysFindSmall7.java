@@ -1,3 +1,5 @@
+package LeetCode;
+
 import org.junit.Test;
 
 /**

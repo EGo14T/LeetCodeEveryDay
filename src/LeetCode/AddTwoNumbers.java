@@ -1,3 +1,5 @@
+package LeetCode;
+
 /**
  * @author 王富昕
  * Create By EGo1ST
