@@ -119,17 +119,7 @@ public class IntToRoman {
 
     @Test
     public void test(){
-        System.out.println(intToRoman(200));
+        System.out.println(intToRoman(9));
         //System.out.println(1234%10);
     }
-
-
-
-
-
-
-
-
-
-
 }
