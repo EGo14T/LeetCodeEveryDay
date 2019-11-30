@@ -52,6 +52,12 @@ import java.util.Map;
  * 输入: "MCMXCIV"
  * 输出: 1994
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
+ *
+ * solution：
+ * 首先建立一个HashMap来映射符号和值，
+ * 然后对字符串从左到右来，
+ * 如果当前字符代表的值不小于其右边，就加上该值；
+ * 否则就减去该值。以此类推到最左边的数，最终得到的结果即是答案
  */
 public class RomanToInt {
     public int romanToInt(String s) {
