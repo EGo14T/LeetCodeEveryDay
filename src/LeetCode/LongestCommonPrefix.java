@@ -28,24 +28,30 @@ import org.junit.Test;
  */
 public class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {
-        int len = strs.length;
+        if (strs.length==0){
+            return "";
+        }
+        String ans = strs[0];
 
-        for (int i = 1 ; i < len; i++){
-            String s = String.valueOf(strs[i].charAt(0));
-            String per = String.valueOf(strs[0].charAt(i-1));
-            if (s.equals(per)){
-                strs[i] = strs[i].substring(1);
-            }else{
-
+        for (int i = 1; i< strs.length; i++){
+            int j = 0;
+            for (;j<strs[i].length() && j<ans.length();j++){
+                if (strs[i].charAt(j)!=strs[0].charAt(j)){
+                    break;
+                }
+            }
+            ans = ans.substring(0,j);
+            if (ans.equals("")){
+                return ans;
             }
         }
-        return strs[0].substring(0,strs[1].length());
+            return ans;
 
     }
 
     @Test
     public void test(){
-        String[] strs = {"flower","flow","flight"};
+        String[] strs = {""};
         System.out.println(longestCommonPrefix(strs));
 
     }
