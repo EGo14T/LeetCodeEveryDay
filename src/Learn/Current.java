@@ -1,5 +1,7 @@
 package Learn;
 
+import org.junit.Test;
+
 /**
  * @author 王富昕
  * Create By EGo1ST
@@ -7,19 +9,27 @@ package Learn;
  * Description：
  */
 public class Current extends Thread {
-    public void run() {
-        System.out.println("子线程启动,ID为:" + Thread.currentThread().getId() +
-                ",名字为" + Thread.currentThread().getName());
+    public void test(){
+        Thread t1 = new Thread(()->{
+            try {
+                sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(123);
+        });
+
+        t1.start();
+
+        Thread t2 = new Thread(()->{
+            System.out.println(456);
+        });
+
+        t2.start();
     }
 
-        public static void main(String[] args)  {
-            // 创建一个线程并开启线程
-            Current a = new Current();
-            a.start();
-            // 多创建几个线程
-            new Current().start();
-            new Current().start();
-            new Current().start();
-
-        }
+    public static void main(String[] args) {
+        Current current = new Current();
+                current.test();
+    }
 }

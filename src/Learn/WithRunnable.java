@@ -7,6 +7,10 @@ package Learn;
  * Description：
  */
 public class WithRunnable implements Runnable {
+
+    LearnEnum learnEnum = LearnEnum.Li;
+
+
     @Override
     public void run() {
         System.out.println("子线程启动,ID为:" + Thread.currentThread().getId() +
