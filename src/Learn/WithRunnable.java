@@ -19,12 +19,18 @@ public class WithRunnable implements Runnable {
 
     public static void main(String[] args)  {
         // 创建一个线程并开启线程
-        Current a = new Current();
-        a.start();
+//        Current a = new Current();
+//        a.start();
         // 多创建几个线程
-        new Current().start();
-        new Current().start();
-        new Current().start();
+//        new Current().start();
+//        new Current().start();
+//        new Current().start();
+
+
+        String s = "abd";
+        String  d = Integer.toString(20,16);
+
+        System.out.println(d);
 
     }
 }
