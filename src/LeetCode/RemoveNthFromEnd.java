@@ -6,7 +6,7 @@ package LeetCode;
  * Date：Created in 2019/12/10 08:48
  * Description:
  *
- * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
+ * 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头节点。
  *
  * 示例：
  *
@@ -18,17 +18,17 @@ package LeetCode;
  * 给定的 n 保证是有效的。
  *
  * 做题思路：
- * 先设置一个假结点指向头结点 head
+ * 先设置一个假节点指向头节点 head
  * 然后遍历出链表的长度length
- * 此时length-n+1 即为 需要删除的结点位置
- * 把first结点再向假结点 位置重置
- * 再次循环 length-n ---- length-n+2 （跳过需要删除的结点地址）
- * 得出结果
+ * 此时length-n+1 即为 需要删除的节点位置
+ * 把first节点再向假节点 位置重置
+ * 再次循环 length-n ---- length-n+2 （跳过需要删除的节点地址）
+ * 得出节果
  *
  */
 public class RemoveNthFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        //设置一个假结点  指向头结点
+        //设置一个假节点  指向头节点
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 
