@@ -16,18 +16,20 @@ public class Varargs {
         }
     }
 
-    public void testWhile(){
-        while (true){
-            for (int i = 0 ; i<1000; i++){
-               System.out.println(i);
-            }
+    public int digui(int i){
+        if (i==0){
+            return i;
         }
-
+        i = i+digui(i-1);
+        System.out.println(i);
+        return i;
     }
+
+
 
     @Test
     public void test(){
         //print("abc","asd","ddd","qwe");
-        testWhile();
+        System.out.println("结果"+digui(10));
     }
 }
