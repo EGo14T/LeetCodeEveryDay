@@ -65,7 +65,6 @@ public class RemoveDuplicates {
 
     }
 
-
     @Test
     public void test(){
         int[] nums = {1,1,2};
