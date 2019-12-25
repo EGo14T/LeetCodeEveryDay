@@ -29,32 +29,52 @@ import org.junit.Test;
  *
  */
 public class StrStr {
+    /**
+     * 暴力解法
+     * @param haystack 需要匹配的长串
+     * @param needle 匹配字串
+     * @return  索引
+     */
     public int strStr(String haystack, String needle) {
-        if (needle.equals("")){
-            return 0;
-        }
+        for (int i = 0; i <= haystack.length(); i++) {
 
-        int l = 0;
-        int r = needle.indexOf().length()-1;
-
-        while (r<haystack.length()){
-            if (haystack.charAt(l)==needle.charAt(0) && haystack.charAt(r)==needle.charAt(needle.length()-1)){
-                return r;
-            }else{
-                l++;
-                r++;
+            if (i + needle.length() > haystack.length()) {
+                return -1;
             }
-
+            if (haystack.substring(i,i+needle.length()).equals(needle)) {
+                return i;
+            }
         }
-
-        return r;
+        return -1;
     }
 
+    /**
+     * 暴力解法
+     * @param haystack 需要匹配的长串
+     * @param needle 匹配字串
+     * @return  索引
+     */
+    public int strStr1(String haystack, String needle){
+        int l = haystack.length();
+        int r = needle.length();
+
+        for(int i = 0; i<=l-r;i++){
+            int j;
+            for (j = 0;j<r;j++){
+                if (haystack.charAt(i+j)!=needle.charAt(j)){
+                    break;
+                }
+            }
+            if (j==r) return i;
+        }
+        return -1;
+    }
 
     @Test
     public void test(){
         String haystack = "hello";
-        String needle = "ll";
+        String needle = "lo";
         System.out.println(strStr(haystack,needle));
+        System.out.println(strStr1(haystack,needle));
     }
 }
